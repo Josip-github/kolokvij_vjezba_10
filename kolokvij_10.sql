@@ -107,6 +107,9 @@ update sestra set bojaociju = 'Osijek';
 #U tablici zena obrišite sve zapise čija je vrijednost kolone maraka različito od 14,81.
 delete from zena where maraka != '14,81';
 
+#Izlistajte kuna iz tablice svekrva uz uvjet da vrijednost kolone carape sadrže slova ana.
+select kuna 
+from svekrva where carape like '%ana%';
 
 
 
