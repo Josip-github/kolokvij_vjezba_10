@@ -71,3 +71,48 @@ create table punac_neprijatelj(
 	punac int not null,
 	neprijatelj int not null
 );
+
+alter table sestra add foreign key (zarucnica) references zarucnica(sifra);
+
+alter table zena add foreign key (mladic) references mladic(sifra);
+
+alter table mladic add foreign key (svekrva) references svekrva(sifra);
+
+alter table svekrva add foreign key (punac) references punac(sifra);
+
+alter table punac_neprijatelj add foreign key (punac) references punac(sifra);
+alter table punac_neprijatelj add foreign key (neprijatelj) references neprijatelj(sifra);
+
+#U tablice mladic, svekrva i punac_neprijatelj unesite po 3 retka.
+insert into punac(eura)
+values(20.00),(21.76),(31.75);
+
+insert into neprijatelj(gustoca,dukserica,stilfrizura)
+values(11.22,'adidas','gel'),(22.54,'nike','ćelav'),(55.33,'s kapuljačom','rokeza');
+
+insert into punac_neprijatelj(punac,neprijatelj)
+values(1,1),(2,2),(3,3);
+
+insert into svekrva(introvertno)
+values(0),(1),(0);
+
+insert into mladic(hlace,stilfrizura,maraka)
+values('svečane','kratko ošišan',54.76),
+('sportske hlače','duga kosa',76.87),
+('iz zare','ćelav',75.12);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
