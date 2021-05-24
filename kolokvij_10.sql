@@ -104,6 +104,8 @@ values('svečane','kratko ošišan',54.76),
 #U tablici sestra postavite svim zapisima kolonu bojaociju na vrijednost Osijek.
 update sestra set bojaociju = 'Osijek';
 
+#U tablici zena obrišite sve zapise čija je vrijednost kolone maraka različito od 14,81.
+delete from zena where maraka != '14,81';
 
 
 
