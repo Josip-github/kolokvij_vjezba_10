@@ -101,8 +101,8 @@ values('svečane','kratko ošišan',54.76),
 ('sportske hlače','duga kosa',76.87),
 ('iz zare','ćelav',75.12);
 
-
-
+#U tablici sestra postavite svim zapisima kolonu bojaociju na vrijednost Osijek.
+update sestra set bojaociju = 'Osijek';
 
 
 
