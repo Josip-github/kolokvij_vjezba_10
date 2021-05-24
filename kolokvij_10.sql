@@ -111,6 +111,22 @@ delete from zena where maraka != '14,81';
 select kuna 
 from svekrva where carape like '%ana%';
 
+/*Prikažite maraka iz tablice neprijatelj, indiferentno iz tablice zena
+te lipa iz tablice mladic uz uvjet da su vrijednosti kolone carape iz
+tablice svekrva počinju slovom a te da su vrijednosti kolone eura iz
+tablice punac različite od 22. Podatke posložite po lipa iz tablice
+mladic silazno.*/
+
+select n.maraka , z.indiferentno , m.lipa 
+from neprijatelj n inner join punac_neprijatelj pn on n.sifra = pn.neprijatelj 
+inner join punac p on p.sifra = pn.punac 
+inner join svekrva s on s.punac = p.sifra 
+inner join mladic m on m.svekrva = s.sifra 
+inner join zena z on z.mladic = m.sifra 
+where s.carape like 'a%' and p.eura != 22.00
+order by m.lipa desc;
+
+
 
 
 
