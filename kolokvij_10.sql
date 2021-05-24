@@ -128,7 +128,7 @@ order by m.lipa desc;
 
 #Prikažite kolone eura i stilfrizura iz tablice punac čiji se primarni ključ ne nalaze u tablici punac_neprijatelj.
 select p.eura , p.stilfrizura 
-from punac p inner join punac_neprijatelj pn on pn.punac = p.sifra 
+from punac p left join punac_neprijatelj pn on pn.punac = p.sifra 
 where pn.punac is null;
 
 
